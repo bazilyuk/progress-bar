@@ -20,7 +20,6 @@ const Solution = () => {
 
   const breakpoints = [20, 50, 75];
 
-  console.log(`percent: ${percent}`);
   const delayProgress = (percentage) => {
     // check if our progress around breakpoints
 
