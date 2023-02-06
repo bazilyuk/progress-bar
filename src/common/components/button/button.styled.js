@@ -17,25 +17,35 @@ export const ButtonStyled = styled.button`
   background-color: ${({ $variant, $color }) => v[$variant][$color].bg};
   color: ${({ $variant, $color }) => v[$variant][$color].color};
   ${({ $variant, $color, $size }) => `
-    ${v[$variant].border 
-    ? `
-      border: ${v[$variant][$color].borderWidth}px solid ${v[$variant][$color].borderColor};
-      padding: ${s[$size].padding.map(e => `${e - v[$variant][$color].borderWidth}px`).join(' ')};
+    ${
+      v[$variant].border
+        ? `
+      border: ${v[$variant][$color].borderWidth}px solid ${
+            v[$variant][$color].borderColor
+          };
+      padding: ${s[$size].padding
+        .map((e) => `${e - v[$variant][$color].borderWidth}px`)
+        .join(' ')};
     `
-    : `border: none;`
+        : `border: none;`
     }
   `}
-  
+
   &:hover {
     background-color: ${({ $variant, $color }) => v[$variant][$color].hover.bg};
     color: ${({ $variant, $color }) => v[$variant][$color].hover.color};
-	  ${({ $variant, $color, $size }) => `
-      ${v[$variant].border
-        ? `
-        border: ${v[$variant][$color].hover.borderWidth}px solid ${v[$variant][$color].hover.borderColor};
-        padding: ${s[$size].padding.map(e => `${e - v[$variant][$color].hover.borderWidth}px`).join(' ')};
+    ${({ $variant, $color, $size }) => `
+      ${
+        v[$variant].border
+          ? `
+        border: ${v[$variant][$color].hover.borderWidth}px solid ${
+              v[$variant][$color].hover.borderColor
+            };
+        padding: ${s[$size].padding
+          .map((e) => `${e - v[$variant][$color].hover.borderWidth}px`)
+          .join(' ')};
       `
-        : `border: none;`
+          : `border: none;`
       }
     `}
     * {
@@ -45,30 +55,41 @@ export const ButtonStyled = styled.button`
   &:focus {
     background-color: ${({ $variant, $color }) => v[$variant][$color].focus.bg};
     color: ${({ $variant, $color }) => v[$variant][$color].focus.color};
-	  ${({ $variant, $color, $size }) => `
-      ${v[$variant].border
-        ? `
-          border: ${v[$variant][$color].focus.borderWidth}px solid ${v[$variant][$color].focus.borderColor};
-          padding: ${s[$size].padding.map(e => `${e - v[$variant][$color].focus.borderWidth}px`).join(' ')};
+    ${({ $variant, $color, $size }) => `
+      ${
+        v[$variant].border
+          ? `
+          border: ${v[$variant][$color].focus.borderWidth}px solid ${
+              v[$variant][$color].focus.borderColor
+            };
+          padding: ${s[$size].padding
+            .map((e) => `${e - v[$variant][$color].focus.borderWidth}px`)
+            .join(' ')};
         `
-        : `border: none;`
-	    }
-    `}    
+          : `border: none;`
+      }
+    `}
     * {
       fill: ${({ $variant, $color }) => v[$variant][$color].focus.color};
     }
   }
   &:disabled {
     cursor: not-allowed;
-    background-color: ${({ $variant, $color }) => v[$variant][$color].disabled.bg};
+    background-color: ${({ $variant, $color }) =>
+      v[$variant][$color].disabled.bg};
     color: ${({ $variant, $color }) => v[$variant][$color].disabled.color};
-	  ${({ $variant, $color, $size }) => `
-      ${v[$variant].border
-        ? `
-          border: ${v[$variant][$color].disabled.borderWidth}px solid ${v[$variant][$color].disabled.borderColor};
-          padding: ${s[$size].padding.map(e => `${e - v[$variant][$color].disabled.borderWidth}px`).join(' ')};
+    ${({ $variant, $color, $size }) => `
+      ${
+        v[$variant].border
+          ? `
+          border: ${v[$variant][$color].disabled.borderWidth}px solid ${
+              v[$variant][$color].disabled.borderColor
+            };
+          padding: ${s[$size].padding
+            .map((e) => `${e - v[$variant][$color].disabled.borderWidth}px`)
+            .join(' ')};
         `
-        : `border: none;`
+          : `border: none;`
       }
     `}
     * {

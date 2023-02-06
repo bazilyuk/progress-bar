@@ -7,7 +7,7 @@ const RequestStatus = {
   OFF: 0,
   START: 1,
   FINISH: 2,
-}
+};
 // when need to stop progress
 const PROGRESS_END = 90;
 // duration of request
@@ -24,8 +24,10 @@ const Solution = () => {
     // check if our progress around breakpoints
 
     const period = PROGRESS_END / TIME_OUT;
-    return !!breakpoints.find(item => percentage >= item - period && percentage <= item + period);
-  }
+    return !!breakpoints.find(
+      (item) => percentage >= item - period && percentage <= item + period
+    );
+  };
 
   useEffect(() => {
     // This useEffect to make interval for progress bar from 0 till 90% for 15 seconds
@@ -38,11 +40,11 @@ const Solution = () => {
         counter += 1;
         if (withBreakPoints) {
           // if user need breakpoints then check if we need to not show the progress
-          if (!delayProgress(PROGRESS_END / TIME_OUT * counter)) {
-            setPercent(PROGRESS_END / TIME_OUT * counter);
+          if (!delayProgress((PROGRESS_END / TIME_OUT) * counter)) {
+            setPercent((PROGRESS_END / TIME_OUT) * counter);
           }
         } else {
-          setPercent(PROGRESS_END / TIME_OUT * counter);
+          setPercent((PROGRESS_END / TIME_OUT) * counter);
         }
         if (counter === TIME_OUT) {
           // after 15 second put request on pause
@@ -72,23 +74,33 @@ const Solution = () => {
         setShowProgress(false);
       }, 3000);
     }, 1000);
-  }
+  };
 
   const toggleBreakpoints = () => {
     setWithBreakPoints((prevState) => !prevState);
-  }
+  };
 
-  return <div>
-    <Button onClick={toggleBreakpoints}>{withBreakPoints ? 'Hide' : 'Show'} Breakpoints</Button>
-    <br />
-    <ButtonWrapperStyled>
-      <Button onClick={onStart} disabled={status === 1}>{status === RequestStatus.START ? 'loading...' : 'start request'}</Button>
-      {status === RequestStatus.START ? <Button onClick={onStop} color="red">Finish Request</Button> : null}
-    </ButtonWrapperStyled>
-    <br />
-    <br />
-    <Progress show={showProgress} percentage={percent} />
-  </div>;
+  return (
+    <div>
+      <Button onClick={toggleBreakpoints}>
+        {withBreakPoints ? 'Hide' : 'Show'} Breakpoints
+      </Button>
+      <br />
+      <ButtonWrapperStyled>
+        <Button onClick={onStart} disabled={status === 1}>
+          {status === RequestStatus.START ? 'loading...' : 'start request'}
+        </Button>
+        {status === RequestStatus.START ? (
+          <Button onClick={onStop} color="red">
+            Finish Request
+          </Button>
+        ) : null}
+      </ButtonWrapperStyled>
+      <br />
+      <br />
+      <Progress show={showProgress} percentage={percent} />
+    </div>
+  );
 };
 
 export default Solution;

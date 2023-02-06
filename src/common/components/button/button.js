@@ -8,7 +8,7 @@ export const Button = memo(
         {children}
       </ButtonStyled>
     );
-  }),
+  })
 );
 
 Button.defaultProps = {

@@ -9,18 +9,18 @@ export const Progress = ({ show, ...rest }) => {
       setTimeout(() => {
         // remove component from dom
         setHide(true);
-      }, 3000)
+      }, 3000);
     } else {
       // show component in dom
       setHide(false);
     }
   }, [show]);
 
-  return !hide ?
+  return !hide ? (
     <ProgressStyled $show={show} {...rest}>
       <div />
     </ProgressStyled>
-    : null;
+  ) : null;
 };
 
 Progress.defaultProps = {
