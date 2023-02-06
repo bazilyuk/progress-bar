@@ -14,7 +14,7 @@ export const ProgressStyled = styled('div')`
 
   & > div {
     background-color: ${colors.white};
-    width: ${({ percentage }) => `${100 - percentage}%`};
+    width: ${({ $percentage }) => `${100 - $percentage}%`};
     height: 6px;
     transition: 0.3s;
     position: absolute;
