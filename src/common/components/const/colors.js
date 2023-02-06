@@ -1,0 +1,17 @@
+export const colors = {
+  primary: '#71BBA8',
+  blue: '#4a55f2',
+  coral: '#fb7155',
+  green: '#20c6c5',
+  purple: '#5c63ff',
+  red: '#f90847',
+  sunrise: '#fcaf60',
+  sunset: '#ff9959',
+  grayDarkest: '#18181a',
+  grayMedium: '#3f464f',
+  gray: '#8b96a6',
+  grayLight: '#c7ced4',
+  grayLighter: '#e7ecf0',
+  offWhite: '#f7f8f9',
+  white: '#ffffff',
+}
